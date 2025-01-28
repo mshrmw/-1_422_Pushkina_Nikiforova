@@ -29,17 +29,65 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image x:Name="kartinka" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="5" Source="/вариант_фото.png" ></Image>
-        <TextBlock x:Name="text_x" Text="x" Grid.Column="1" Grid.Row="4"></TextBlock>
-        <TextBlock x:Name="text_m" Text="m" Grid.Column="1" Grid.Row="5"></TextBlock>
-        <TextBox x:Name="x_t" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
-        <TextBox x:Name="m_t" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
-        <RadioButton x:Name="sh" Content="sh(x)" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"></RadioButton>
-        <RadioButton x:Name="steptwo" Content="x^2" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"></RadioButton>
-        <RadioButton x:Name="estepx" Content="e^x" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"></RadioButton>
-        <Button x:Name="vichislit" Content="Вычислить" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2" Click="vichislit_Click"></Button>
-        <Button x:Name="ochistit" Content="Очистить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" Click="ochistit_Click"></Button>
-        <TextBlock x:Name="otvet_text" Text="Ответ" Grid.Column="1" Grid.Row="9"></TextBlock>
-        <TextBox x:Name="otvet" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2"></TextBox>
+        <Image x:Name="kartinka" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="5" Source="/вариант_фото.png">
+            <Image.ToolTip>
+                <ToolTip>Изображение с примером</ToolTip>
+            </Image.ToolTip>
+        </Image>
+        <TextBlock x:Name="text_x" Text="x" Grid.Column="1" Grid.Row="4">
+            <TextBlock.ToolTip>
+                <ToolTip>Введите значение x</ToolTip>
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <TextBlock x:Name="text_m" Text="m" Grid.Column="1" Grid.Row="5">
+            <TextBlock.ToolTip>
+                <ToolTip>Введите значение m</ToolTip>
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <TextBox x:Name="x_t" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBox.ToolTip>
+                <ToolTip>Введите значение x</ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="m_t" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBox.ToolTip>
+                <ToolTip>Введите значение m</ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <RadioButton x:Name="sh" Content="sh(x)" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2">
+            <RadioButton.ToolTip>
+                <ToolTip>Выберите функцию sh(x)</ToolTip>
+            </RadioButton.ToolTip>
+        </RadioButton>
+        <RadioButton x:Name="steptwo" Content="x^2" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2">
+            <RadioButton.ToolTip>
+                <ToolTip>Выберите функцию x^2</ToolTip>
+            </RadioButton.ToolTip>
+        </RadioButton>
+        <RadioButton x:Name="estepx" Content="e^x" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2">
+            <RadioButton.ToolTip>
+                <ToolTip>Выберите функцию e^x</ToolTip>
+            </RadioButton.ToolTip>
+        </RadioButton>
+        <Button x:Name="vichislit" Content="Вычислить" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2">
+            <Button.ToolTip>
+                <ToolTip>Нажмите для вычисления</ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Button x:Name="ochistit" Content="Очистить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2">
+            <Button.ToolTip>
+                <ToolTip>Нажмите для очистки полей</ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <TextBlock x:Name="otvet_text" Text="Ответ" Grid.Column="1" Grid.Row="9">
+            <TextBlock.ToolTip>
+                <ToolTip>Результат вычислений</ToolTip>
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <TextBox x:Name="otvet" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" IsReadOnly="True">
+            <TextBox.ToolTip>
+                <ToolTip>Результат вычислений</ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
     </Grid>
 </Window>
