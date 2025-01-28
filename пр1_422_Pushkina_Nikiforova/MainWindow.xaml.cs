@@ -28,18 +28,28 @@ namespace пр1_422_Pushkina_Nikiforova
         }
         private void vichislit_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(x_t.Text) || string.IsNullOrEmpty(m_t.Text))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля");
+                return;
+            }
+
+            if (!double.TryParse(x_t.Text, out double xValue) || !double.TryParse(m_t.Text, out double yValue))
+            {
+                MessageBox.Show("Пожалуйста, введите корректные числовые значения");
+                return;
+            }
+
             try
             {
-                double xValue = double.Parse(x_t.Text);
-                double yValue = double.Parse(m_t.Text);
-
                 double result = CalculateB(xValue, yValue);
                 otvet.Text = result.ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка ввода данных: " + ex.Message);
+                MessageBox.Show("Ошибка при вычислении: " + ex.Message);
             }
+            
         }
         private double CalculateB(double x, double y)
         {
@@ -79,10 +89,18 @@ namespace пр1_422_Pushkina_Nikiforova
             }
             else
             {
-                throw new InvalidOperationException("Функция не выбрана.");
+                throw new InvalidOperationException("Функция не выбрана");
             }
         }
-
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Подтверждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+            base.OnClosing(e);
+        }
 
         private void ochistit_Click(object sender, RoutedEventArgs e)
         {
